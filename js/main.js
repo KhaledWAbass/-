@@ -300,7 +300,7 @@ if(document.querySelector(".table .container .box div span.price")) {
     document.querySelector(".table .container .box div .price").innerText = `ج${totle}`
 })
 }
-let done = document.querySelector(".table .container .box button.done")
+let done = document.querySelector(".table .container .box a.done")
 if(done) {
     done.addEventListener("click", () => {
         if(document.querySelectorAll("table tbody tr").length === 0) {
@@ -319,8 +319,5 @@ if(done) {
  window.localStorage.clear()
  window.location.href = `https://wa.me/${phoneNumber}?text= ${masseg.join("\n")} | ${tot}  السعر الكلي ج`
 }
-})
-done.addEventListener("click", () => {
-    window.location = `../index.html`
 })
 }
