@@ -1,0 +1,509 @@
+ * {
+    box-sizing: border-box;
+    padding: 0;
+margin: 0;
+ }
+ a {
+        text-decoration: none;
+ }
+  li {
+    list-style: none;
+  } 
+  body {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+position: relative;
+
+
+  }
+  html {
+    line-height: 2;
+  }
+  .container {
+    width: 95%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+    $color-primary: #1a73e8;
+    $color-secondary: #ff6f00;
+    $color-neutral: #f5f5f5;
+    $transtion: all 0.3s linear;
+    $color-dark: #212121;
+// header
+  header {
+   width: 100%;
+   border-bottom: #ddd;
+   background-color: $color-primary;
+   color: $color-neutral;
+   height: auto;
+   display: block;
+   padding-top: 10px;
+   & .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & .logo {
+display: flex;
+align-items: center;
+justify-content: center;
+span {
+ font-size: 20px;
+ font-weight: bold;
+}
+img {
+      margin-left: 20px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+     }
+    }
+    & .links ul {
+display: flex;
+gap: 15px;
+align-items: center;
+justify-content: center;
+li {
+  cursor: pointer;
+  a {
+  transition: 0.3s linear;
+  border-radius: 5px;
+   padding: 10px;
+   &:hover {
+     background-color: $color-secondary;
+    }
+  }
+}
+    }
+   }
+  } 
+  // landing
+  .landing {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  transition:$transtion ;
+  background-image: url(../upload/products-img/File1.jpg);
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  text-align: right;
+  color: $color-dark;
+  .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+  z-index: -1;    
+}
+.info {
+  margin: 10px;
+  font-size: 30px;
+  p {
+    font-size: 20px;
+    
+  }
+  color: white;
+  a {
+    font-size: 20px;
+    cursor: pointer;
+    margin: 20px;
+    padding: 10px;
+    transition: all 0.3s linear;
+    background-color: $color-primary;
+    color: $color-neutral;
+    border: none;
+    :hover {
+      background-color: $color-secondary;
+    }
+  }
+}
+  } 
+  // out 
+  .out {
+    position: fixed;
+    width: 150px;
+    bottom: 10px;
+    right: 10px;
+      transition: $transtion;
+    z-index: 1;
+    color: white;
+    font-size: 20px;
+    a {
+      padding: 10px;
+      justify-content: space-between;
+      align-items: center;
+      transition: $transtion;
+      display: flex;
+      margin-bottom: 10px;
+      background-color: #1a73e8;
+      cursor: pointer;
+      border-radius: 10px;
+      > span {
+        color: white;
+      }
+    }
+    .follow:hover {
+      background-color: #0051bb;
+    }
+    a.cont {
+      background-color: #25D366;
+     svg {
+      width: 40px;
+     }
+     &:hover {
+      background-color: #00c147;
+     }
+    }
+    a.up {
+      background-color: $color-secondary;
+      &:hover {
+        background-color: #cf5b02;
+      }
+    }
+    a > svg {
+      fill: white;
+      width: 30px;
+    }
+    &.hidden {
+      display: none;
+    }
+  }
+  // about
+  .about {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    align-items: center;
+    flex-direction: column;
+    img {
+      width: 350px;
+      height: 340px;
+      border-radius: 50%;
+    }
+    h2 {
+      margin-top: 20px;
+      font-weight: bold;
+      padding: 10px;
+      font-size: 40px;
+          border-bottom: 2px solid $color-primary;
+      color: $color-secondary;
+    }
+    p {
+      font-size: 20px;
+      color: #858585;
+    }
+  }
+  // prouducts
+  .prouducts, .cart , .prouductAll {
+    margin-top: 20px;
+    h2  {
+      padding: 10px;
+      margin: 30px auto;
+      width: fit-content;
+      font-size: 30px;
+      font-weight: bold;
+      border-bottom: 2px solid $color-primary;
+      color: $color-secondary;
+    }
+    .container-cards {
+     display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        .card {
+                 background: $color-neutral;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        &:hover {
+                  transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      }
+      &.not-available {
+            opacity: 0.5;
+    color: red;
+    background-color: red;
+    cursor: not-allowed;
+    button {
+      cursor: not-allowed;
+    }
+      }
+        .img img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        }
+        .info {
+          display: flex;
+          flex-direction: column;
+          text-align: right;
+          p , span{
+     color: #555;
+        font-size: 2em;
+        margin-bottom: 15px;
+        }
+         button {
+        background: #28a745;
+        color: white;
+        border: none;
+        bottom: 0;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.9em;
+        transition: background 0.3s ease;
+        }
+        }
+        }
+    }
+    a {
+      background-color: $color-primary;
+      color: white;
+      padding: 10px 20px;
+      font-size: 20px;
+      text-align: center;
+      margin: 20px auto;
+      border-radius: 5px;
+      display: block;
+      margin-top: 20px;
+    }
+  }
+  // footer
+  footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+    gap: 20px;
+    background-color: $color-primary;
+    .info {
+      img {
+        border-radius: 50%;
+        width: 300px;
+        height: 300px;
+      }
+      .name {
+        color: $color-neutral;
+font-size: 40px;
+font-weight: bold;
+margin-top: 20px;
+text-align: center;
+      }
+    }
+    .social  {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+ a > img {
+  width: 300px;
+  height: 300px;
+ }
+ .links {
+  display: flex;
+justify-content: center;
+align-items: center;
+a {
+  display: block;
+  width: 80px;
+  cursor: pointer;
+  margin: 10px;
+  fill: black;
+}
+ }
+    }
+  }
+  .details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    .img img{
+width: 800px;
+object-fit: cover;
+height: 800px;
+    }
+    .info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 30px;
+      .title {
+        color: $color-primary;
+        border-bottom: 1px solid $color-secondary;
+        font-size: 30px;
+        padding: 10px;
+      }
+      .counter {
+                       color: $color-primary;
+        border-bottom: 1px solid $color-secondary;
+        font-size: 20px;
+        padding: 10px;
+        span {
+          border: 1px solid $color-primary;
+          padding: 10px;
+          text-align: center;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        input {
+          padding: 10px;
+          margin-left: 10px;
+          margin-right: 10px;
+          text-align: center;
+          width: 60px;
+        }
+      }
+      .price {
+               color: $color-primary;
+        border-bottom: 1px solid $color-secondary;
+        font-size: 20px;
+        padding: 10px;
+      }
+      a {
+                background: #28a745;
+        color: white;
+        border: none;
+        bottom: 0;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.9em;
+        transition: background 0.3s ease;
+      }
+    }
+  }
+  .table .container .box {
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #333;
+    border-radius: 6px;
+
+    h2 {
+        color: var(--primary);
+        font-size: 30px;
+    }
+
+    div {
+        display: flex;
+        padding: 10px;
+        font-size: 20px;
+        justify-content: space-between;
+        border-bottom: 1px solid #333;
+    }
+    button.done {
+        padding: 20px;
+        margin: 20px auto;
+        text-align: center;
+        color: white;
+        background-color: $color-primary;
+        width: 100%;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+    }
+}
+
+table {
+    border: 1px solid #333;
+    width: 100%;
+    margin: 20px;
+    padding: 20px;
+
+    th {
+        padding: 10px;
+    }
+
+    tbody tr {
+        position: relative;
+
+        span.close {
+            content: "x";
+            position: absolute;
+            background-color: $color-primary;
+            color: $color-neutral;
+            text-align: center;
+            width: 30px;
+            top: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+    }
+
+    tr,
+    th {
+        border-bottom: 1px solid #333;
+
+        td {
+            padding: 10px;
+            margin: 10px;
+
+            input {
+                text-align: center;
+                color: #333;
+                width: 50px;
+            }
+
+            img {
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+            }
+
+            span.title {
+                font-size: 25px;
+            }
+        }
+
+        td.flex {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+    }
+}
+
+.table .container .back-updata  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & a.back,
+    & a.Up {
+        display: block;
+        width: fit-content;
+        padding: 8px 10px;
+        color: black;
+        transition: $transtion;
+        background-color: transparent;
+        cursor: pointer;
+        margin: 20px;
+        border-radius: 5px;
+        border: 1px solid #333;
+
+        &:hover {
+            background-color: $color-secondary;
+            color: white;
+        }
+    }
+}
+
+  @media (max-width: 768px) {
+    .prouducts .container-cards, .prouductAll .container-cards {
+      grid-template-columns: 1fr;
+      grid-column: 1 / -1;
+      gap: 20px;
+    }
+    footer {
+      flex-direction: column-reverse;
+    }
+  }
