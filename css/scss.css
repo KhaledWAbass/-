@@ -397,6 +397,7 @@ footer .social .links a {
 }
 .table .container .box a.done {
   padding: 20px;
+  display: block;
   margin: 20px auto;
   text-align: center;
   color: white;
@@ -506,6 +507,11 @@ table th td.flex {
     -o-object-fit: cover;
        object-fit: cover;
   }
+  header .logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
 }
 @media (max-width: 992px) {
   .prouducts .container-cards, .prouductAll .container-cards {
@@ -515,5 +521,28 @@ table th td.flex {
   }
   footer {
     flex-direction: column-reverse;
+  }
+  header .logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+}
+@media (max-width: 576px) {
+  .prouducts .container-cards, .prouductAll .container-cards {
+    grid-template-columns: 1fr;
+    grid-column: 1/-1;
+    gap: 20px;
+  }
+  header .logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  .details .img img {
+    width: 200px;
+    height: 200px;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }/*# sourceMappingURL=scss.css.map */

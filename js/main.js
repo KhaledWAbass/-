@@ -1,6 +1,10 @@
 let arrOfImg = []
-for(let i=1;i<= 49;i++) {
-arrOfImg.push(`./upload/products-img/File${i}.jpg`)
+if (arrOfImg) {
+fetch("../product.json").then(r => r.json()).then(data => {
+    for(let i=1;i<= data.products.length;i++) {
+        arrOfImg.push(`./upload/products-img/File${i}.jpg`)
+    }
+})
 }
 let landing = document.querySelector(".landing")
 if(landing) {
