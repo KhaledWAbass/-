@@ -71,7 +71,7 @@ if(document.querySelector(".prouductAll")){loadProducts(".prouductAll .container
 const parames=new URLSearchParams(window.location.search)
 let Id;if(new URLSearchParams(window.location.search)){Id=parames.get("id")}
 let productsArr=[]
-let total=0;if(document.querySelector(".details .info .counter input")){fetch("../product.json").then(r=>r.json()).then(data=>{let price;for(let i=0;i<data.products.length;i++){if(data.products[i].id==Number(Id)){document.querySelector(".details .info .title span").innerHTML=data.products[i].name
+let totle=0;if(document.querySelector(".details .info .counter input")){fetch("../product.json").then(r=>r.json()).then(data=>{let price;for(let i=0;i<data.products.length;i++){if(data.products[i].id==Number(Id)){document.querySelector(".details .info .title span").innerHTML=data.products[i].name
 document.querySelector(".details .img img").src=`.${data.products[i].img}`
 document.querySelector(".details .info .price span").innerHTML=`ج${data.products[i].price}`
 price=data.products[i].price}}
