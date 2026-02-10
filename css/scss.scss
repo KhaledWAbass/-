@@ -217,6 +217,8 @@ li {
                  background: $color-neutral;
         border-radius: 10px;
         overflow: hidden;
+        width: 300px;
+        height: 650px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
         &:hover {
@@ -232,19 +234,26 @@ li {
       cursor: not-allowed;
     }
       }
-        .img img {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-        }
+        .img
+         {
+width: 100%;
+height: 55%;
+           img {
+             width: 100%;
+             height: 100%;
+             object-fit: cover;
+            }
+          }
         .info {
           display: flex;
           flex-direction: column;
+          justify-content: space-between;
           text-align: right;
+          width: 100%;
+          height: 45%;
           p , span{
      color: #555;
         font-size: 2em;
-        margin-bottom: 15px;
         }
          button {
         background: #28a745;
@@ -498,10 +507,38 @@ table {
     }
 }
 
-  @media (max-width: 768px) {
-    .prouducts .container-cards, .prouductAll .container-cards {
+
+  @media (max-width: 576px) {
+        .cart .container-cards,.prouducts .container-cards, .prouductAll .container-cards {
       grid-template-columns: 1fr;
-      grid-column: 1 / -1;
+      gap: 20px;
+    }
+        .landing .info p {
+      font-size: 30px;
+    }
+            .landing .info h1 {
+      font-size: 3em;
+    }
+        header .container .logo span {
+      font-size: 30px;
+    }
+    header .container .links ul li a {
+      font-size: 30px;
+    }
+    header .logo img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+        .details .img img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
+  }
+  @media (max-width: 768px) {
+    .cart .container-cards,.prouducts .container-cards, .prouductAll .container-cards {
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
       gap: 20px;
     }
     footer {
@@ -517,36 +554,51 @@ table {
       height: 50px;
       border-radius: 50%;
     }
+        header .container .links ul li a {
+      font-size: 30px;
+    }
+    header .container .logo span {
+      font-size: 30px;
+    }
+    .landing .info p {
+      
+      font-size: 30px;
+    }
+        .landing .info a {
+      font-size: 35px;
+    }
   }
-    @media (max-width: 992px) {
-    .prouducts .container-cards, .prouductAll .container-cards {
-      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-      grid-column: 1 / -1;
+  @media (max-width: 992px) {
+    .cart .container-cards,.prouducts .container-cards, .prouductAll .container-cards {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
+    }
+        .landing .info p {
+      font-size: 40px;
+    }
+    .landing .info a {
+      font-size: 35px;
+    }
+            .details .img img {
+      width: 500px;
+      height: 500px;
+      object-fit: cover;
     }
     footer {
       flex-direction: column-reverse;
+    }
+        header .container .logo span {
+      font-size: 30px;
+    }
+        header .container .links ul li a {
+      font-size: 30px;
     }
        header .logo img {
       width: 50px;
       height: 50px;
       border-radius: 50%;
     }
-  }
-  @media (max-width: 576px) {
-        .prouducts .container-cards, .prouductAll .container-cards {
-      grid-template-columns: 1fr;
-      grid-column: 1 / -1;
-      gap: 20px;
-    }
-    header .logo img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-    }
-        .details .img img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
+                .landing .info h1 {
+      font-size: 3em;
     }
   }
