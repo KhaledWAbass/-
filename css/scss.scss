@@ -505,6 +505,24 @@ table {
             color: white;
         }
     }
+
+  }
+
+.prouductAll input {
+  padding: 10px;
+  width: 100%;
+  margin: 20px auto;
+  display: block;
+  border: 1px solid #333;
+  border-radius: 5px;
+  ::placeholder {
+    color: #333;
+    font-size: 20px;
+  }
+  :focus {
+    outline: none;
+    border-color: $color-primary;
+  }
 }
 
 
